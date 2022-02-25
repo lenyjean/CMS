@@ -51,7 +51,7 @@ class ForTrialModelController extends Controller
         $challenge = $request->query('hub_challenge');
         // echo $mode;
         // echo $token;
-        return $challenge;
+        return 'CHALLENGE_ACCEPTED';
 
         // $forTrialModel->save();
 
