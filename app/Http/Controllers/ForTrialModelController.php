@@ -15,10 +15,15 @@ class ForTrialModelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(StoreForTrialModelRequest $request)
     {
         //
-        return ForTrialModel::all();
+        $mode = $request->input('hub_mode');
+        $token = $request->input('hub_verify_token');
+        $challenge = $request->input('hub_challenge');
+        // echo $mode;
+        // echo $token;
+        return $challenge;
     }
 
     /**
@@ -68,10 +73,14 @@ class ForTrialModelController extends Controller
      * @param  \App\Models\ForTrialModel  $forTrialModel
      * @return \Illuminate\Http\Response
      */
-    public function show($forTrialModel)
+    public function show($request)
     {
-        //
-        return ForTrialModel::find($forTrialModel);
+        $mode = $request->input('hub_mode');
+        $token = $request->input('hub_verify_token');
+        $challenge = $request->input('hub_challenge');
+        // echo $mode;
+        // echo $token;
+        return $challenge;
     }
 
     /**
