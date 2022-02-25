@@ -46,9 +46,9 @@ class ForTrialModelController extends Controller
         // $forTrialModel->name = $request->input('name');
         // $forTrialModel->description = $request->input('description');
 
-        $mode = $request->query('hub_mode');
-        $token = $request->query('hub_verify_token');
-        $challenge = $request->query('hub_challenge');
+        $mode = $request->input('hub_mode');
+        $token = $request->input('hub_verify_token');
+        $challenge = $request->input('hub_challenge');
         // echo $mode;
         // echo $token;
         return response('CHALLENGE_ACCEPTED', 200);
